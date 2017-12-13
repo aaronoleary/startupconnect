@@ -1,0 +1,23 @@
+  <div class = "container">
+    <h1> Connect your startup with developers!</h1>
+    <p class = "small-lead">Startups are hard, especially on your own. It's hard to act on a great idea. </br> that's where we come in. JustStart will connect your startup with great developers.</br>
+      helping you get a foot in the door </p>
+  </div>
+
+  <div class =  "posts_container">
+    <% @posts.each do |post| %>
+      <div class = "individual_post">
+        <h2 class="title"><%= link_to post.title, post %></h2>
+        <p><%= post.tagline %></p>
+        <p><%= post.body %></p>
+        <p><%= post.incentive%> </p>
+        <p><%= post.contact%> </p>
+
+      </div>
+
+    <% end %>
+  </div>
+
+  <%= button_to "New post", new_post_path, method: :get%>
+
+  <script src="js/scripts.js"></script>
